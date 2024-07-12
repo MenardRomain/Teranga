@@ -8,23 +8,25 @@
     <style></style>
 </head>
 <body>
-    <div class="container">
-        <h1>Notes</h1>
-        <a href="/notes/create" class="create-btn">Create Note</a>
-        <div class="notes-container">
-            <ul class="notes-list">
-                <?php foreach ($notes as $note): ?>
-                    <li><a href="/notes/<?php echo $note['id']; ?>"><?php echo $note['category']; ?></a></li>
-                <?php endforeach; ?>
+    <div class="notes-sidebar">
+        <div class="notes-header">
+            <h1>Notes</h1>
+            <a href="/notes/create" class="create-btn">Create Note</a>
+        </div>
+        <div class="notes-list">
+            <ul>
+            <?php foreach ($notes as $note): ?>
+                <li><a href="/notes/<?php echo $note['id']; ?>"><?php echo $note['category']; ?></a></li>
+            <?php endforeach; ?>
             </ul>
         </div>
-        <div class="note-details">
-            <!-- Contenu de la note détaillée sera inséré dynamiquement ici -->
+        <div class="chat-input">
+            <input type="text" placeholder="Type your message...">
         </div>
-    </div>
-    <div class="chat-input">
-        <!-- Input de chat en bas -->
-        <input type="text" placeholder="Type your message...">
+        </div>
+
+        <div class="note-details">
+    <!-- Note details will be displayed here -->
     </div>
 </body>
 </html>
